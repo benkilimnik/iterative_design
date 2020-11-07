@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A/B Testing Cacti</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css"
+      integrity="sha256-x8PYmLKD83R9T/sYmJn1j3is/chhJdySyhet/JuHnfY=" crossorigin="anonymous" />
+  </head>
+
+  <body class="text-gray-700 font-body">
+
+    <div class="grid md:grid-cols-3">
+
+      <div class="md:col-span-3">
+        <nav class="flex flex-wrap items-center p-3 bg-gray-900">
+          <a href="#" class="inline-flex items-center p-2 mr-4">
+            <span class="text-xl font-bold tracking-wide text-white uppercase">A/B Testing - Shopping For Cacti</span>
+          </a>
+          <button
+            class="inline-flex p-3 ml-auto text-white rounded outline-none hover:bg-gray-900 lg:hidden hover:text-white nav-toggler"
+            data-target="#navigation">
+            <i class="material-icons">menu</i>
+          </button>
+          <div class="hidden w-full top-navbar lg:inline-flex lg:flex-grow lg:w-auto" id="navigation">
+            <div
+              class="flex flex-col items-start w-full lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto lg:items-center lg:h-auto">
+              <a href="#"
+                class="items-center justify-center w-full px-3 py-2 text-gray-400 rounded lg:inline-flex lg:w-auto hover:bg-gray-900 hover:text-white">
+                <span>Home</span>
+              </a>
+              <a href="#"
+                class="items-center justify-center w-full px-3 py-2 text-gray-400 rounded lg:inline-flex lg:w-auto hover:bg-gray-900 hover:text-white">
+                <span>Portfolio</span>
+              </a>
+              <a href="#"
+                class="items-center justify-center w-full px-3 py-2 text-gray-400 rounded lg:inline-flex lg:w-auto hover:bg-gray-900 hover:text-white">
+                <span>Contact</span>
+              </a>
+            </div>
+          </div>
+        </nav>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"
+          integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+        <script>
+          $(document).ready(function () {
+            $(".nav-toggler").each(function (_, navToggler) {
+              var target = $(navToggler).data("target");
+              $(navToggler).on("click", function () {
+                $(target).animate({
+                  height: "toggle"
+                });
+              });
+            });
+          });
+
+        </script>
+      </div>
+
+
+      <div class="md:col-span-1 md:flex md:justify-end">
+        <nav class="text-right navbar">
+          <div class="flex items-center justify-between">
+            <div class="px-6 py-6 cursor-pointer md:hidden" id="burger">
+              <svg class="w-6 h-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            </div>
+          </div>
+
+          <ul class="sticky top-0 hidden pr-16 mt-4 text-sm align-self-start md:block navbar-nav" id="menu">
+            <li class="py-2">
+              <a href="#intro" class="flex justify-start px-4 pl-6 text-xl md:mt-12 hover:text-gray-800">
+                Introduction
+
+                <svg class="h-6 ml-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.701 2.701 0 00-1.5-.454M9 6v2m3-2v2m3-2v2M9 3h.01M12 3h.01M15 3h.01M21 21v-7a2 2 0 00-2-2H5a2 2 0 00-2 2v7h18zm-3-9v-2a2 2 0 00-2-2H8a2 2 0 00-2 2v2h12z" />
+                </svg>
+
+              </a>
+            </li>
+            <li class="py-2">
+              <a href="#hypotheses" class="flex justify-start px-4 pl-6 text-xl hover:text-gray-800">
+                Hypotheses
+                <svg class="h-6 ml-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path fill="#fff" d="M12 14l9-5-9-5-9 5 9 5z" />
+                  <path fill="#fff"
+                    d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
+                </svg>
+              </a>
+            </li>
+            <li class="py-2">
+              <a href="#data" class="flex justify-start px-4 pl-6 text-xl hover:text-gray-800">
+                Collecting Data
+                <svg class="h-6 ml-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </a>
+            </li>
+            <li class="py-2">
+              <a href="#infographic" class="flex justify-start px-4 pl-6 text-xl hover:text-gray-800">
+                Infographic
+                <svg class="h-6 ml-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z">
+                  </path>
+                </svg>
+              </a>
+            </li>
+            <li class="py-2">
+              <a href="#conclusion" class="flex justify-start px-4 pl-6 text-xl hover:text-gray-800">
+                Conclusion
+                <svg class="h-6 ml-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+                </svg>
+              </a>
+            </li>
+
+
+
+          </ul>
+        </nav>
+      </div>
+
+      <main class="px-16 py-6 bg-gray-100 md:col-span-2">
+
+        <section class="container flex flex-col max-w-xl py-1 mb-10 text-left">
+          <h1 id="intro" class="header1">
+            Introduction</h1>
+
+          <p class="paragraph">In this project, I set out to compare two different versions of an online cacti shop.
+            With statistical tests in-hand, I examined whether interface A with a <em>horizontally stacked layout</em>
+            is
+            better or worse than interface B with a <em>vertically stacked layout. </em></p>
+
+          <p class="paragraph">The two key metrics I examine are <b>time to completion</b>, which is the time it
+            takes
+            for a user to order cacti, and <b>return rate</b>, which is whether a user returns to the page or not after
+            buying cacti.</p>
+
+        </section>
+        <div class="grid justify-start gap-8 lg:grid-cols-1 xl:grid-cols-2">
+
+          <div class="overflow-hidden rounded shadow-lg">
+            <img src="./img/A.png" alt="low fidelity prototype mobile"
+              class="h-auto max-w-full align-middle border-none" />
+            <div class="py-6 text-center">
+              <a href="https://frozen-cliffs-77393.herokuapp.com/" target="_blank"
+                class="inline-block transition duration-500 ease-out transform bg-white border-2 hover:shadow-inner hover:scale-125 btn text-primary border-primary hover:bg-primary hover:text-white">
+                Interface A</a>
+            </div>
+          </div>
+          <div class="overflow-hidden rounded shadow-lg">
+            <img src="./img/B.png" alt="low fidelity prototype mobile"
+              class="h-auto max-w-full align-middle border-none" />
+            <div class="py-6 text-center">
+              <a href="https://frozen-cliffs-77393.herokuapp.com/" target="_blank"
+                class="inline-block text-blue-500 transition duration-500 ease-out transform bg-white border-2 border-blue-500 hover:shadow-inner hover:scale-125 btn hover:bg-blue-500 hover:text-white">
+                Interface B</a>
+            </div>
+          </div>
+        </div>
+        <section class="container flex flex-col max-w-xl py-1 text-left">
+          <h1 id="hypotheses" class="mt-4 header1">Hypotheses</h1>
+          <h2 class="header2">Time to Completion</h2>
+          <p class="paragraph"><b>Null hypothesis:</b> Both interfaces A and B take equal or similar amounts of time
+            to
+            order
+            cacti from.</p>
+          <p class="paragraph"><b>Alternative hypothesis:</b> Interface A takes longer to order because the layout is
+            less symmetrical and less
+            structured. Each image is stacked horizontally such that large images take up more vertical space. This
+            makes it harder to find the order button because it is hidden beneath the image on different positions on
+            the page. Interface B, on the other hand, features a more structured layout with each "Add to Cart" button
+            place along the same vertical line.</p>
+          <h2 class="header2">Return Rate</h2>
+          <p class="paragraph"><b>Null hypothesis:</b> Both interfaces have equal or similar return rates.</p>
+          <p class="paragraph"><b>Alternative hypothesis:</b> Interface B causes users to return more often to the
+            page
+            because it has more visual symmetry, making it more appealing to scroll down and browse through the cacti
+            options. </p>
+        </section>
+
+        <section class="container flex flex-col max-w-xl py-1 text-left">
+          <h1 id="data" class="header1">
+            Collecting Data</h1>
+          <p class="paragraph">In order to collect data, I deployed a website on heroku that alternates between the two
+            interfaces. When a user navigates to the page, there is a 50% chance of them seeing version A and a 50%
+            chance of them viewing version B. This website was then shown to fellow students in my class, who purchased
+            (fictional) cacti through the website.
+          </p>
+        </section>
+
+
+        <section class="container flex flex-col max-w-xl py-1 text-left">
+          <h1 id="infographic" class="header1">
+            Infographic</h1>
+        </section>
+        <div class="flex flex-wrap justify-start py-4">
+          <div class="w-7/12">
+            <img src="./img/BenK_infographic.png" alt="high fidelity prototype desktop"
+              class="h-auto max-w-full align-middle border-none rounded shadow-xl" />
+          </div>
+        </div>
+
+
+        <section class="container flex flex-col max-w-xl mb-6 text-left">
+          <h1 id="conclusion" class="mt-12 header1">
+            Conclusion</h1>
+
+          <ul class="paragraph">
+            <li><b>limitations</b> include a lack of data (only 17 distinct users were recorded in the heroku logs).
+              This could be expanded by extending the heroku saved logs above 1500 lines. </li><br>
+            <li>Another <b>limitation</b> is that all users were of roughly the same age (all were college students).
+              Extending user testing to a more diverse range of users could improve the reliability and applicability of
+              the results, since college students may not be representative of all online shoppers for cacti.</li><br>
+            <li>Given inconclusive (statistically insignificant) results, we cannot make any
+              inferences about <b>design
+                principles</b>, as it is unclear which interface ultimately performed better. </li>
+          </ul>
+        </section>
+
+      </main>
+    </div>
+
+    <script src="index.js"></script>
+    <script src="./scrollmenu.js"></script>
+    <script>
+      new ScrollMenu(['.navbar-nav a'], {
+        duration: 600,
+      })
+    </script>
+
+  </body>
+
+</html>
