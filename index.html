@@ -139,6 +139,17 @@
                 </svg>
               </a>
             </li>
+            <li class="py-2">
+              <a href="#analysis" class="flex justify-start px-4 pl-6 text-xl hover:text-gray-800">
+                Analysis
+                <svg class="h-6 ml-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
+                </svg>
+              </a>
+            </li>
 
 
           </ul>
@@ -354,7 +365,7 @@
         <section class="container flex flex-col max-w-xl py-1 text-left">
           <h1 id="high-after" class="header1">High Fidelity Prototype after critique</h1>
           <h2 class="header2">Critique Feedback</h2>
-          <p class="leading-loose tracking-wide paragraph">
+          <p class="pb-12 leading-loose tracking-wide paragraph">
             - Text hierarchy (changed boldness, used one typeface) <br>
             - Dashboard icons (made notifications vs members clear) <br>
             - Project relationship (added parent project selection for the tree logic <br>
@@ -374,19 +385,80 @@
                 class="inline-block text-blue-500 transition duration-500 ease-out transform bg-white border-2 border-blue-500 hover:shadow-inner hover:scale-125 btn hover:bg-blue-500 hover:text-white">
                 Hi-Fi After Critique</a>
             </div>
-
           </div>
-
         </section>
-
 
 
         <section class="container flex flex-col max-w-xl mb-6 text-left">
           <h1 id="user-testing" class="mt-12 header1">
             User Testing</h1>
           <h2 class="header2">Tasks</h2>
+          <ol class="leading-loose list-decimal">
+            <li>Create a new project</li>
+            <ol class="ml-8 list-decimal">
+              <li>View your projects</li>
+              <li>Create a new project</li>
+              <li>Submit new project</li>
+            </ol>
+
+            <li>Open up one of your projects to feedback</li>
+            <ol class="ml-8 list-decimal">
+              <li>View your projects</li>
+              <li>Select a project</li>
+              <li>Open the project up to feedback</li>
+            </ol>
+            <li>Provide Feedback to someones else's project</li>
+            <ol class="ml-8 list-decimal">
+              <li>View all projects</li>
+              <li>Find and view someone else's project</li>
+              <li>Provide Feedback</li>
+              <li>Submit the feedback form</li>
+            </ol>
+
+          </ol>
+
           <h2 class="header2">Post-Task Questions</h2>
-          <h2 class="header2">Analysis</h2>
+          <ol class="leading-loose list-decimal">
+            <li>Which task did you find the hardest? Why?</li>
+            <li>Did the website's navigation match your Expectations?</li>
+            <li>What would you change about this website if you could?</li>
+            <li>How effectives was this website for the given tasks?</li>
+          </ol>
+          <h2 class="header1" id="analysis">Analysis</h2>
+          <h2 class="header2">Our Expectations</h2>
+          <ul class="ml-8 leading-loose list-disc">
+            <li>It should be pretty straightforward to create a new project and open a project to feedback</li>
+            <li>We were curious to find out if users can find other projects</li>
+            <ol class="ml-8 list-disc">
+              <li>We expected some possible confusion around the explore page</li>
+            </ol>
+          </ul>
+
+          <h2 class="header2">User Behaviors & Mistakes</h2>
+          <ul class="ml-8 leading-loose list-disc">
+            <li>First user made no errors in tasks, did tasks pretty quickly but had trouble differentiating between own
+              and others' projects</li>
+            <li>Second user tried to click the member circles from "My Project" page in order to go to other projects
+            </li>
+            <li>All users had trouble finding the "Explore" page, they did not know that that would lead to seeing all
+              possible projects</li>
+            <li>Users did not know what were "their projects" or "other people's projects". They did not instinctively
+              click on the "i" in order to view the key</li>
+          </ul>
+
+          <h2 class="header2">Potential Changes</h2>
+          <ul class="ml-8 leading-loose list-disc">
+            <li>Change header label from "explore" to "all projects"</li>
+            <li>Make key for projects tree onscreen
+            </li>
+            <ul class="ml-8 list-disc">
+              <li>Info button open by default —> to make sure ppl know which is their projects</li>
+            </ul>
+            <li>We also found some prototype bugs, i.e., on "Project A" page, the breadcrumb "Explore > Project A"
+              should be "My Projects > Project A"</li>
+
+          </ul>
+
         </section>
 
       </main>
